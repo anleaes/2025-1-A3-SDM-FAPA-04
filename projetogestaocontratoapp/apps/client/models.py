@@ -1,5 +1,5 @@
 from django.db import models
-from Media.models import Media
+from media.models import Media
 # Create your models here.
 
 class Client(models.Model):
