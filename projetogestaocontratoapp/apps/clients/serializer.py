@@ -8,5 +8,5 @@ class ClientSerializer(serializers.ModelSerializer):
         
 class ClientCommunicationSerializer(serializers.ModelSerializer):
     class Meta:
-        model =ClientCommunication
+        model = ClientCommunication
         fields = '__all__'

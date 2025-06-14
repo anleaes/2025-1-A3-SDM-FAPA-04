@@ -3,5 +3,5 @@ from django.apps import AppConfig
 
 class MediasConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Media'
-    verbose_name = 'Meios comunicação'
+    name = 'medias'
+    verbose_name = 'Meios de comunicação'

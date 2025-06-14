@@ -4,6 +4,6 @@ from rest_framework import viewsets
 from .serializer import MediaSerializer
 
 # Create your views here.
-class MediaSet(viewsets.ModelViewSet):
+class MediaViewSet(viewsets.ModelViewSet):
     queryset = Media.objects.all()
     serializer_class = MediaSerializer  
