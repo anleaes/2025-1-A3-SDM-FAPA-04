@@ -1,6 +1,6 @@
 from django.db import models
-from contract.models import Contract
-from client.models import Client
+from contracts.models import Contract
+from clients.models import Client
 # Create your models here.
 class Negotiation(models.Model):
     total_value = models.FloatField('Valor Total', null=True, blank=True, default=0.0)

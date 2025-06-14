@@ -1,5 +1,5 @@
 from django.db import models
-from contractype.models import ContractType
+from contractypes.models import ContractType
 
 # Create your models here.
 class Contract(models.Model):  

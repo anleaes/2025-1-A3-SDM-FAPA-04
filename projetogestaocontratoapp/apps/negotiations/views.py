@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Negotiation, OrderItem
+from .models import Negotiation, ContractVersion  
 from rest_framework import viewsets
 from .serializer import NegotiationSerializer, ContractVersionSerializer
 
