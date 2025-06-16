@@ -6,7 +6,7 @@ app_name = 'clients'
 
 router = routers.DefaultRouter()
 router.register('', views.ClientViewSet, basename='clientes')
-router.register('', views.ClientCommunicationViewSet, basename='clientes_meio_comunicação')
+router.register('', views.ClientCommunicationViewSet, basename='canais_comunicação_cliente')
 
 urlpatterns = [
     path('', include(router.urls) )
