@@ -9,6 +9,7 @@ class Contract(models.Model):
     is_active = models.BooleanField('Ativo', default=False)
     term = models.DateField('Prazo do Contrato', auto_now=False, auto_now_add=False)   
     value = models.DecimalField('Valor do Contrato', max_digits=10, decimal_places=2, default=0.00)
+    contract_title = models.CharField('Titulo do Contrato', max_length=200, blank=True, null=True)
    
     class Meta:
         verbose_name = 'Contrato'
@@ -16,12 +17,12 @@ class Contract(models.Model):
         ordering =['id']
     
     def __str__(self):
-        return self.name
+        return self.contract_title
     
 
 class Attachment(models.Model):
-    # Relaciona cada anexo a um contrato
-    contract = models.ForeignKey(Contract, on_delete=models.CASCADE, related_name='anexos')# related: Permite acessar anexos de um contrato: contrato.anexos.all() 
+    
+    contract = models.ForeignKey(Contract, on_delete=models.CASCADE, related_name='anexos')
     file_name = models.CharField(max_length=255)
     file = models.ImageField(upload_to='attachment_contract/') 
 
@@ -31,5 +32,5 @@ class Attachment(models.Model):
         ordering =['id']
     
     def __str__(self):
-        return self.nome_arquivo
+        return self.contract
 

@@ -13,13 +13,13 @@ class Negotiation(models.Model):
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    Contract_version = models.ManyToManyField(Contract, through='ContractVersion', blank=True)
+    body_contract = models.ManyToManyField(Contract, through='BodyContract', blank=True)
     
     class Meta:
-        verbose_name = 'Negociação'
-        verbose_name_plural = 'Negociações'
+        verbose_name = 'Negociaçao'
+        verbose_name_plural = 'Negociaçoes'
         ordering =['id']
 
     def __str__(self):
-        return "%s" % (self.total_value) 
+        return "%s" % (self.client) 
     

@@ -1,4 +1,4 @@
-from .models import Negotiation, ContractVersion
+from .models import Negotiation, BodyContract
 from rest_framework import serializers
 
 class NegotiationSerializer(serializers.ModelSerializer):
@@ -6,7 +6,3 @@ class NegotiationSerializer(serializers.ModelSerializer):
         model = Negotiation
         fields = '__all__'
 
-class ContractVersionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ContractVersion
-        fields = '__all__'
