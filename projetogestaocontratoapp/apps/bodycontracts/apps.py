@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class OrdersConfig(AppConfig):
+class BodyContractConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Corpocontrato'
-    verbose_name = 'Corpo Contratos'
+    name = 'Corpo do contrato'
+    verbose_name = 'Corpo do Contratos'
