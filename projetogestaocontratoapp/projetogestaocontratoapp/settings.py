@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_filters",
-    "clients.apps.ClientsConfig",
     "bodycontracts.apps.BodyContractsConfig",
     "clients.apps.ClientsConfig",
     "communicationchannels.apps.CommunicationChannelsConfig",
