@@ -1,4 +1,5 @@
-from .models import Negotiation, BodyContract
+from .models import Negotiation
+from bodycontracts.models import BodyContract 
 from rest_framework import serializers
 
 class NegotiationSerializer(serializers.ModelSerializer):

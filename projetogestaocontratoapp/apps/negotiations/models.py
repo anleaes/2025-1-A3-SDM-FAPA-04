@@ -13,7 +13,7 @@ class Negotiation(models.Model):
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    body_contract = models.ManyToManyField(Contract, through='BodyContract', blank=True)
+    body_contract = models.ManyToManyField(Contract, blank=True)
     
     class Meta:
         verbose_name = 'Negociaçao'
