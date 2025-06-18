@@ -1,6 +1,6 @@
 from django.db import models
 from negotiations.models import Negotiation
-from contracts import Contract
+from contracts.models import Contract
 
 
 class BodyContract (models.Model):        
