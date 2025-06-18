@@ -41,7 +41,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_filters",
     "clients.apps.ClientsConfig",
-    "BodyContracts.apps.OrdersConfig",
+    "bodycontracts.apps.BodyContractsConfig",
+    "clients.apps.ClientsConfig",
+    "communicationchannels.apps.CommunicationChannelsConfig",
+    "contracts.apps.ContractsConfig",
+    "contracttypes.apps.ContractTypesConfig",
+    "negotiations.apps.NegotiationsConfig",
 ]
 
 MIDDLEWARE = [

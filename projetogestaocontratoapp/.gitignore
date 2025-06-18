@@ -1,2 +1,16 @@
 projetogestaocontratoapp/__pycache__/*
 .env
+/apps/bodycontracts/__pycache__/*
+/apps/bodycontracts/migrations/*
+/apps/clients/__pycache__/*
+/apps/clients/migrations/*
+/apps/communicationchannels/__pycache__/*
+/apps/communicationchannels/migrations/*
+/apps/contracts/__pycache__/*
+/apps/contracts/migrations/*
+/apps/contracttypes/__pycache__/*
+/apps/contracttypes/migrations/*
+/apps/negotiations/__pycache__/*
+/apps/negotiations/migrations/*
+
+
