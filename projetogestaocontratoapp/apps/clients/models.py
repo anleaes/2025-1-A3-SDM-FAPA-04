@@ -1,6 +1,6 @@
 from django.db import models
 from communicationchannels.models import CommunicationChannel
-# Create your models here.
+
 
 class Client(models.Model):
     name = models.CharField('Nome', max_length=150)
@@ -14,7 +14,7 @@ class Client(models.Model):
     ('U', 'União Estável'),
 )
     marital_status = models.CharField('Estado Civil', max_length=1, choices=MARITAL_STATUS_CHOICES)
-    client_communication = models.ManyToManyField(CommunicationChannel, through='ClientCommunication', blank=True)
+    communicationchannel = models.ManyToManyField(CommunicationChannel, blank=True)
 
     class Meta:
         verbose_name = 'Cliente'
@@ -26,7 +26,7 @@ class Client(models.Model):
     
 class ClientCommunication(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    communicationchannel = models.ForeignKey(CommunicationChannel, on_delete=models.CASCADE)
+    communication_channel = models.ForeignKey(CommunicationChannel, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Canal de Comunicação com o Cliente'
@@ -34,5 +34,5 @@ class ClientCommunication(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.communicationchannel.name 
+        return self.communication_channel.name 
     

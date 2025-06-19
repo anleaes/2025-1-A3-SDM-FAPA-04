@@ -41,13 +41,15 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_filters",
-    "bodycontracts.apps.BodyContractsConfig",
-    "clients.apps.ClientsConfig",
-    "communicationchannels.apps.CommunicationChannelsConfig",
-    "contracts.apps.ContractsConfig",
-    "contracttypes.apps.ContractTypesConfig",
-    "negotiations.apps.NegotiationsConfig",
+    "rest_framework",
+    "apps.bodycontracts.apps.BodyContractsConfig",
+    "apps.clients.apps.ClientsConfig",
+    "apps.communicationchannels.apps.CommunicationChannelsConfig",
+    "apps.contracts.apps.ContractsConfig",
+    "apps.contracttypes.apps.ContractTypesConfig",
+    "apps.negotiations.apps.NegotiationsConfig",
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

@@ -1,6 +1,7 @@
 from django.db import models
 from contracts.models import Contract
 from clients.models import Client
+
 # Create your models here.
 class Negotiation(models.Model):
     total_value = models.FloatField('Valor Total', null=True, blank=True, default=0.0)
@@ -16,8 +17,8 @@ class Negotiation(models.Model):
     body_contract = models.ManyToManyField(Contract, blank=True)
     
     class Meta:
-        verbose_name = 'Negociaçao'
-        verbose_name_plural = 'Negociaçoes'
+        verbose_name = 'Negociação'
+        verbose_name_plural = 'Negociações'
         ordering =['id']
 
     def __str__(self):

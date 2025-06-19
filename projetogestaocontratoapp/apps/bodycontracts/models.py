@@ -3,6 +3,7 @@ from negotiations.models import Negotiation
 from contracts.models import Contract
 
 
+
 class BodyContract(models.Model):        
     negotiation = models.ForeignKey(Negotiation, on_delete=models.CASCADE)
     contract = models.ForeignKey(Contract, on_delete=models.CASCADE,related_name='versions', verbose_name='Contrato')

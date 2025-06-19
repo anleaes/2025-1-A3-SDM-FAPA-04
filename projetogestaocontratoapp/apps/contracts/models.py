@@ -1,6 +1,8 @@
 from django.db import models
 from contracttypes.models import ContractType
 
+
+
 # Create your models here.
 class Contract(models.Model):  
     contract_type = models.ForeignKey(ContractType, on_delete=models.CASCADE)
