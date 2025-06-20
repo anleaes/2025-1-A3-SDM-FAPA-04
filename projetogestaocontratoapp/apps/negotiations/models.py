@@ -1,6 +1,6 @@
 from django.db import models
-from contracts.models import Contract
-from clients.models import Client
+
+
 
 # Create your models here.
 class Negotiation(models.Model):
@@ -13,8 +13,8 @@ class Negotiation(models.Model):
         ('Cancelado', 'Cancelado'),
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    body_contract = models.ManyToManyField(Contract, blank=True)
+    client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
+    body_contract = models.ManyToManyField('contracts.Contract', blank=True)
     
     class Meta:
         verbose_name = 'Negociação'

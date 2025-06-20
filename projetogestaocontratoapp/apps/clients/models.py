@@ -1,5 +1,4 @@
 from django.db import models
-from communicationchannels.models import CommunicationChannel
 
 
 class Client(models.Model):
@@ -14,7 +13,7 @@ class Client(models.Model):
     ('U', 'União Estável'),
 )
     marital_status = models.CharField('Estado Civil', max_length=1, choices=MARITAL_STATUS_CHOICES)
-    communicationchannel = models.ManyToManyField(CommunicationChannel, blank=True)
+    communicationchannel = models.ManyToManyField('communicationchannels.CommunicationChannel', blank=True)
 
     class Meta:
         verbose_name = 'Cliente'
@@ -25,8 +24,8 @@ class Client(models.Model):
         return self.name
     
 class ClientCommunication(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    communication_channel = models.ForeignKey(CommunicationChannel, on_delete=models.CASCADE)
+    client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
+    communication_channel = models.ForeignKey('communicationchannels.CommunicationChannel', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Canal de Comunicação com o Cliente'
