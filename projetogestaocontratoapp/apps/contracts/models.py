@@ -3,13 +3,15 @@ from django.db import models
 
 # Create your models here.
 class Contract(models.Model):  
-    contract_type = models.ForeignKey('contracttypes.ContractType', on_delete=models.CASCADE)
+    #contract_type = models.ForeignKey('contracttypes.ContractType', on_delete=models.CASCADE)
+    contract_title = models.CharField('Titulo do Contrato', max_length=200, blank=True, null=True)
+    #body_contract = models.ManyToManyField('bodycontracts.BodyContract', blank=True) 
     note = models.TextField('Descricao', max_length=200)
     contract_date = models.DateField('Data do Contrato', auto_now=False, auto_now_add=False)   
     is_active = models.BooleanField('Ativo', default=False)
     term = models.DateField('Prazo do Contrato', auto_now=False, auto_now_add=False)   
     value = models.DecimalField('Valor do Contrato', max_digits=10, decimal_places=2, default=0.00)
-    contract_title = models.CharField('Titulo do Contrato', max_length=200, blank=True, null=True)
+  
    
     class Meta:
         verbose_name = 'Contrato'
@@ -17,9 +19,12 @@ class Contract(models.Model):
         ordering =['id']
     
     def __str__(self):
-        return self.contract_title
-    
+        return  self.contract_title
 
+
+  
+    # def __str__(self):
+    #     return  f"{self.contract_title} - {self.contract_type}"
 # class Attachment(models.Model):
     
 #     contract = models.ForeignKey('contracts.Contract', on_delete=models.CASCADE, related_name='anexos')

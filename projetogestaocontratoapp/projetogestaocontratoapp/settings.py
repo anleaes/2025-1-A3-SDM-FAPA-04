@@ -17,8 +17,8 @@ from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent # Já deve existir
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = Path(__file__).resolve().parent.parent # Já deve existir
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APPS_DIR = os.path.join(BASE_DIR, 'apps') 
 sys.path.insert(0, APPS_DIR) 
 
@@ -50,9 +50,8 @@ INSTALLED_APPS = [
     "communicationchannels.apps.CommunicationChannelsConfig",
     "contracts.apps.ContractsConfig",
     "contracttypes.apps.ContractTypesConfig",
-    "negotiations.apps.NegotiationsConfig",
- 
-]
+        "negotiations.apps.NegotiationsConfig",
+    ]
 
 
 MIDDLEWARE = [

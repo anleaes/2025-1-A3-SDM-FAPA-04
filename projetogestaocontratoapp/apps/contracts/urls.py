@@ -10,4 +10,3 @@ router.register('', views.ContractViewSet, basename='contratos')
 urlpatterns = [
     path('', include(router.urls) )
 ]
-

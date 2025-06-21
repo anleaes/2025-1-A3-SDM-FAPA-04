@@ -13,14 +13,14 @@ class Negotiation(models.Model):
         ('Cancelado', 'Cancelado'),
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
-    client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
-    body_contract = models.ManyToManyField('contracts.Contract', blank=True)
+    #client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
+    #negociacao_contract = models.ManyToManyField('contracts.Contract', blank=True)
     
     class Meta:
-        verbose_name = 'Negociação'
-        verbose_name_plural = 'Negociações'
+        verbose_name = 'negociação'
+        verbose_name_plural = 'negociações'
         ordering =['id']
 
     def __str__(self):
-        return "%s" % (self.client) 
+        return self.status
     
