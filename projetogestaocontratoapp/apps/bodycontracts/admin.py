@@ -1,1 +1,5 @@
-# Este arquivo torna o diretório 'bodycontracts' um pacote Python.
+from django.contrib import admin
+from .models import BodyContract
+
+# Register your models here.
+admin.site.register(BodyContract)

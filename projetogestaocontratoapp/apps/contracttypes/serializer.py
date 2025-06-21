@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import ContractType
 from rest_framework import serializers
 
