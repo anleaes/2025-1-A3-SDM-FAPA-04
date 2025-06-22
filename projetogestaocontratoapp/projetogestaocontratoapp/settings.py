@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "bodycontracts.apps.BodyContractsConfig",
     "clients.apps.ClientsConfig",
     "communicationchannels.apps.CommunicationChannelsConfig",
+    "clientcommunications.apps.ClientCommunicationsConfig",
     "contracts.apps.ContractsConfig",
     "contracttypes.apps.ContractTypesConfig",
         "negotiations.apps.NegotiationsConfig",

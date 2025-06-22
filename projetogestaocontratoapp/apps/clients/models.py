@@ -13,7 +13,7 @@ class Client(models.Model):
     ('U', 'União Estável'),
 )
     marital_status = models.CharField('Estado Civil', max_length=1, choices=MARITAL_STATUS_CHOICES)
-    #communicationchannel = models.ManyToManyField('communicationchannels.CommunicationChannel', blank=True)
+    ommunicationchannel = models.ManyToManyField('communicationchannels.CommunicationChannel', blank=True)
     value_channel = models.CharField(max_length=255, verbose_name="Valor do Canal")
 
 
@@ -23,17 +23,4 @@ class Client(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.name
-    
-# class ClientCommunication(models.Model):
-#     client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
-#     communication_channel = models.ForeignKey('communicationchannels.CommunicationChannel', on_delete=models.CASCADE)
-
-#     class Meta:
-#         verbose_name = 'Canal de Comunicação com o Cliente'
-#         verbose_name_plural = 'Canais de Comunicação com o Cliente'
-#         ordering =['id']
-
-#     def __str__(self):
-#         return self.communication_channel.name 
-    
+        return self.name    
