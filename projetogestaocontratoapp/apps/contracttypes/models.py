@@ -1,10 +1,9 @@
 from django.db import models
 
 
-
 class ContractType(models.Model):
     name = models.CharField('Nome', max_length=50)
-    description = models.TextField('Descricao', max_length=100)
+    descriptions = models.TextField('Descrição', max_length=100)
     
     class Meta:
         verbose_name = 'Tipo de Contrato'

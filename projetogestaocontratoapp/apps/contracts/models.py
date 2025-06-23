@@ -3,16 +3,17 @@ from django.db import models
 
 # Create your models here.
 class Contract(models.Model):  
-    #contract_type = models.ForeignKey('contracttypes.ContractType', on_delete=models.CASCADE)
     contract_title = models.CharField('Titulo do Contrato', max_length=200, blank=True, null=True)
-    #body_contract = models.ManyToManyField('bodycontracts.BodyContract', blank=True) 
-    note = models.TextField('Descricao', max_length=200)
+    annotation = models.TextField('Descricao', max_length=200)
     contract_date = models.DateField('Data do Contrato', auto_now=False, auto_now_add=False)   
     is_active = models.BooleanField('Ativo', default=False)
-    term = models.DateField('Prazo do Contrato', auto_now=False, auto_now_add=False)   
-    value = models.DecimalField('Valor do Contrato', max_digits=10, decimal_places=2, default=0.00)
-  
-   
+    term = models.DateField('Prazo do Contrato', auto_now=False, auto_now_add=False)
+    photo = models.ImageField('Foto', upload_to='photos')
+    doc = models.FileField('Documentos', upload_to='docs')   
+    #body_contracts = models.ManyToManyField('bodycontracts.BodyContract') 
+    #negotiation = models.ForeignKey('negotiations.Negotiation', on_delete=models.CASCADE)
+    contract_types = models.ForeignKey('contracttypes.ContractType', on_delete=models.CASCADE)
+     
     class Meta:
         verbose_name = 'Contrato'
         verbose_name_plural = 'Contratos'

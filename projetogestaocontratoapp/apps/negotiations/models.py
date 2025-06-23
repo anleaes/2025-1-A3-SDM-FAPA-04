@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 class Negotiation(models.Model):
-    total_value = models.FloatField('Valor Total', null=True, blank=True, default=0.0)
+    total_value = models.FloatField('Valor Total', null=True, blank=True, default=0.0, help_text='Valor em Reais')
     STATUS_CHOICES = (
         ('Em andamento', 'Em andamento'),
         ('Aprovado', 'Aprovado'),
@@ -13,9 +13,9 @@ class Negotiation(models.Model):
         ('Cancelado', 'Cancelado'),
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
-    #client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
-    #negociacao_contract = models.ManyToManyField('contracts.Contract', blank=True)
-    
+    client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
+    #contract = models.ManyToManyField ('contracts.Contract')
+       
     class Meta:
         verbose_name = 'negociação'
         verbose_name_plural = 'negociações'
