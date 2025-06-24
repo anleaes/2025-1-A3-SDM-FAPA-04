@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "contracts.apps.ContractsConfig",
     "contracttypes.apps.ContractTypesConfig",
     "negotiations.apps.NegotiationsConfig",
+    "projetogestaocontratoapp",
     ]
 
 MIDDLEWARE = [

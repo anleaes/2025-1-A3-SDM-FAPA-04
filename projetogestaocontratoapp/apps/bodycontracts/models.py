@@ -10,13 +10,15 @@ class BodyContract(models.Model):
 
 
     class Meta:
-        unique_together = ('negotiation', 'contract_father')
+        #unique_together = ('contract_father')
         verbose_name = 'Corpo do contrato'
-        verbose_name_plural = 'Corpo dos Contratos'
+        verbose_name_plural = 'Itens do contrato'
         ordering =['id']
 
     def __str__(self):
         return self.contract_father
+    
+
 
     # class Meta:
     #     verbose_name = 'Corpo do contrato'
