@@ -4,6 +4,8 @@ projetogestaocontratoapp/__pycache__/*
 /apps/bodycontracts/migrations/*
 /apps/clients/__pycache__/*
 /apps/clients/migrations/*
+/apps/clientcommunications/__pycache__/*
+/apps/clientcommunications/migrations/*
 /apps/communicationchannels/__pycache__/*
 /apps/communicationchannels/migrations/*
 /apps/contracts/__pycache__/*

@@ -48,11 +48,12 @@ INSTALLED_APPS = [
     "bodycontracts.apps.BodyContractsConfig",
     "clients.apps.ClientsConfig",
     "communicationchannels.apps.CommunicationChannelsConfig",
+    "clientcommunications.apps.ClientCommunicationsConfig",
     "contracts.apps.ContractsConfig",
     "contracttypes.apps.ContractTypesConfig",
-        "negotiations.apps.NegotiationsConfig",
+    "negotiations.apps.NegotiationsConfig",
+    "projetogestaocontratoapp",
     ]
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -95,8 +96,6 @@ DATABASES = {
          'PASSWORD': config('DB_PASSWORD'),  
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -137,3 +136,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+MEDIA_ROOT = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')

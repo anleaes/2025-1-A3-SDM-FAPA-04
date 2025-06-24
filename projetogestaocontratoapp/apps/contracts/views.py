@@ -9,4 +9,4 @@ class ContractViewSet(viewsets.ModelViewSet):
     queryset = Contract.objects.all()
     serializer_class = ContractSerializer  
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['name', 'description']
+    filterset_fields = ['contract_title', 'is_active'] 
