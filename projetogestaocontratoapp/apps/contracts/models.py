@@ -10,7 +10,7 @@ class Contract(models.Model):
     term = models.DateField('Prazo do Contrato', auto_now=False, auto_now_add=False)
     photo = models.ImageField('Foto', upload_to='photos')
     doc = models.FileField('Documentos', upload_to='docs')   
-    #body_contracts = models.ManyToManyField('bodycontracts.BodyContract') 
+    body_contracts = models.ManyToManyField('bodycontracts.BodyContract', verbose_name="itens contrato") 
     #negotiation = models.ForeignKey('negotiations.Negotiation', on_delete=models.CASCADE)
     contract_types = models.ForeignKey('contracttypes.ContractType', on_delete=models.CASCADE)
      

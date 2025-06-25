@@ -1,11 +1,11 @@
 from django.db import models
 
 class BodyContract(models.Model):        
-    negotiation = models.ForeignKey('negotiations.Negotiation', on_delete=models.CASCADE)
-    contract_father = models.ForeignKey('contracts.Contract', on_delete=models.CASCADE)
+   # negotiation = models.ForeignKey('negotiations.Negotiation', on_delete=models.CASCADE)
+    #contract_father = models.ForeignKey('contracts.Contract', on_delete=models.CASCADE)
     clause = models.TextField('Clausula', blank=True, null=True)
     title_clause = models.CharField('Titulo da Clausula', max_length=100)
-    quantity_clause = models.IntegerField('Numero da clausula', null=True, blank=True,default=0)
+    quantity_clause = models.IntegerField('Numero de clausulas', null=True, blank=True,default=0)
     
 
 
@@ -16,7 +16,7 @@ class BodyContract(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.contract_father
+        return self.title_clause
     
 
 

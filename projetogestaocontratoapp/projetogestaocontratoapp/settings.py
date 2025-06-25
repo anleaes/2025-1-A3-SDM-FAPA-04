@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_filters",
     "rest_framework",
+    "corsheaders",
     "bodycontracts.apps.BodyContractsConfig",
     "clients.apps.ClientsConfig",
     "communicationchannels.apps.CommunicationChannelsConfig",
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
     "contracts.apps.ContractsConfig",
     "contracttypes.apps.ContractTypesConfig",
     "negotiations.apps.NegotiationsConfig",
-    "projetogestaocontratoapp",
+    
     ]
 
 MIDDLEWARE = [
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "projetogestaocontratoapp.urls"
@@ -70,10 +72,11 @@ ROOT_URLCONF = "projetogestaocontratoapp.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, 'projetogestaocontratoapp/templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
@@ -138,3 +141,4 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_ROOT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+CORS_ALLOW_ALL_ORIGINS = True
