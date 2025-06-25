@@ -14,7 +14,7 @@ class Negotiation(models.Model):
     )
     status = models.CharField('Status', max_length=20, choices=STATUS_CHOICES, null=True, blank=True, default='Em andamento')
     client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
-    #contract = models.ManyToManyField ('contracts.Contract')
+    contract = models.ForeignKey ('contracts.Contract', on_delete=models.CASCADE)
        
     class Meta:
         verbose_name = 'negociação'
@@ -22,5 +22,4 @@ class Negotiation(models.Model):
         ordering =['id']
 
     def __str__(self):
-        return self.status
-    
+        return f"{self.status} - {self.client}"
