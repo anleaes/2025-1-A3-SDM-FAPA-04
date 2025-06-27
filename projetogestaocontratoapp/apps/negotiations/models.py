@@ -1,8 +1,6 @@
 from django.db import models
 
 
-
-# Create your models here.
 class Negotiation(models.Model):
     total_value = models.FloatField('Valor Total', null=True, blank=True, default=0.0, help_text='Valor em Reais')
     STATUS_CHOICES = (

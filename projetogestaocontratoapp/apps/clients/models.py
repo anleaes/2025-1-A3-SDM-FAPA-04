@@ -14,8 +14,6 @@ class Client(models.Model):
 )
     
     marital_status = models.CharField('Estado Civil', max_length=1, choices=MARITAL_STATUS_CHOICES)
-    #communicationchannels = models.ManyToManyField('communicationchannels.CommunicationChannel', verbose_name='Canal de Comunicação')
-    # channel = models.TextField('Contato', max_length=100) 
     client_communication =  models.ForeignKey ('clientcommunications.ClientCommunication', verbose_name='Canal de Comunicação' , on_delete=models.CASCADE)
 
     class Meta:

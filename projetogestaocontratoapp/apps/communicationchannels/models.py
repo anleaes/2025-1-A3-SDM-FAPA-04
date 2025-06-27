@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 class CommunicationChannel(models.Model):
     name = models.CharField('Nome', max_length=50)
-    #definition= models.TextField('Definição', max_length=100)
     TYPE_CONTATO_CHOICES = (
     ('PF', 'Pessoa Física'),
     ('PJ', 'Pessoa Jurídica'),

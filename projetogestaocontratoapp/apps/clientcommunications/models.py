@@ -1,7 +1,6 @@
 from django.db import models
 
 class ClientCommunication(models.Model):
-   # client = models.ForeignKey('clients.Client', on_delete=models.CASCADE)
     communicationchannels = models.ManyToManyField ('communicationchannels.CommunicationChannel', verbose_name='canal de comunicação')
     contact_value = models.CharField('Contato', max_length=255)
     
